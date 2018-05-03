@@ -496,9 +496,9 @@ ylab="Within groups sum of squares", main="Scree Plot") }
 plot.wgss(pca.scores, 20) # Elbow test
 ```
 
-From the abve Scree Plot, looks like we can use about 8 clusters for our data.
+From the abve Scree Plot, looks like we can use about 5 clusters for our data.
 ```{r}
-km <- kmeans(pca.scores, 8)
+km <- kmeans(pca.scores, 5)
 table(km$cluster)
 ```
 
@@ -511,7 +511,7 @@ plot(pca.scores[,1:2], col=km$cluster)
 ## Model-based clustering
 ```{r}
 library(mclust)
-mc <- Mclust(pca.scores, 8)
+mc <- Mclust(pca.scores, 5)
 summary(mc)
 ```
 
